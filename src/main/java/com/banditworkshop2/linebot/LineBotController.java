@@ -61,8 +61,8 @@ public class LineBotController {
                 break;
             }
             default:
-                log.info("Return echo message %s : %s", replyToken, "From Bot:" + text);
-                this.replyText(replyToken, text);
+                log.info("Return echo message %s : %s", replyToken, text);
+                this.replyText(replyToken, "From Bot:" + text);
         }
     }
 
