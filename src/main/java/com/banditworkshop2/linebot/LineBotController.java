@@ -33,6 +33,25 @@ public class LineBotController {
         handleTextContent(event.getReplyToken(), event, message);
     }
 
+    @EventMapping
+    public void handleStickerMessage(MessageEvent<StickerMessageContent> event) {
+        log.info(event.toString());
+        StickerMessageContent message = event.getMessage();
+        reply(event.getReplyToken(), new StickerMessage(
+                message.getPackageId(), message.getStickerId()));
+    }
+
+    @EventMapping
+    public void handleLocationMessage(MessageEvent<LocationMessageContent> event) {
+        log.info(event.toString());
+        LocationMessageContent message = event.getMessage();
+        reply(event.getReplyToken(), new LocationMessage(
+                (message.getTitle() == null) ? "Location replied" : message.getTitle(),
+                message.getAddress(),
+                message.getLatitude(),
+                message.getLongitude()));
+    }
+
     private void handleTextContent(String replyToken, Event event,
             TextMessageContent content) {
         String text = content.getText();
