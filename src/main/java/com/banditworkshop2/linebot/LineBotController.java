@@ -37,7 +37,7 @@ public class LineBotController {
             TextMessageContent content) {
         String text = content.getText();
 
-        log.info("Hi", replyToken, text);
+        log.info("Got text message from %s : %s", replyToken, text);
 
         switch (text) {
             case "Profile": {
@@ -61,8 +61,8 @@ public class LineBotController {
                 break;
             }
             default:
-                log.info("Return echo message %s : %s", replyToken, text);
-                this.replyText(replyToken, "ดีจ้า" + text);
+                log.info("Return echo message %s : %s", replyToken,"From Bot:"+ text);
+                this.replyText(replyToken, text);
         }
     }
 
