@@ -118,7 +118,7 @@ public class LineBotController {
             }
             default:
                 log.info("Return echo message %s : %s", replyToken, text);
-                this.replyText(replyToken, text);
+                this.replyText(replyToken,"ว่าใด"+ text);
         }
     }
 
