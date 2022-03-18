@@ -103,7 +103,7 @@ public class LineBotController {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
                     lineMessagingClient.getProfile(userId)
-                            .whenComplete((profile, throwable)  ->  {
+                            .whenComplete((profile, throwable) -> {
                                 if (throwable != null) {
                                     this.replyText(replyToken, throwable.getMessage());
                                     return;
@@ -118,33 +118,29 @@ public class LineBotController {
             }
             default:
                 log.info("Return echo message %s : %s", replyToken, text);
-                this.replyText(replyToken,"ว่าใด"+ text);
-        
+                this.replyText(replyToken, "ว่าใด" + text);
+
             case "พะเยา": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
                     lineMessagingClient.getProfile(userId)
-                            .whenComplete((phayao, throwable)  ->   {
-                            if (throwable != null) {
-                                this.replyText(replyToken, throwable.getMessage());
-                                return;
-                            }
-                            this.reply(replyToken, Arrays.asList(
-                                    new TextMessage("จังหวัดพะเยาเอง")
-                                    ));
-                            this.reply(replyToken, Arrays.asList(
-                                new TextMessage("https://www.google.com/maps/place/Phayao/@19.2672932,99.0371395,8z/data=!3m1!4b1!4m5!3m4!1s0x30d82120f437301b:0x195a4b21f6c96a8c!8m2!3d19.2154367!4d100.2023692")
+                            .whenComplete((phayao, throwable) -> {
+                                if (throwable != null) {
+                                    this.replyText(replyToken, throwable.getMessage());
+                                    return;
+                                }
+                                this.reply(replyToken, Arrays.asList(
+                                        new TextMessage("จังหวัดพะเยาเอง"),
+                                        new TextMessage(
+                                                "https://www.google.com/maps/place/Phayao/@19.2672932,99.0371395,8z/data=!3m1!4b1!4m5!3m4!1s0x30d82120f437301b:0x195a4b21f6c96a8c!8m2!3d19.2154367!4d100.2023692")));
 
-                            ));
-                        });
+                            });
                 }
                 break;
             }
-            
-    }
-}
 
-    
+        }
+    }
 
     private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
