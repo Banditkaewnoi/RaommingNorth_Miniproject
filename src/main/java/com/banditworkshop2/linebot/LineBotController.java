@@ -103,7 +103,7 @@ public class LineBotController {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
                     lineMessagingClient.getProfile(userId)
-                            .whenComplete((profile, throwable) -> {
+                            .whenComplete((profile, throwable)  ->  {
                                 if (throwable != null) {
                                     this.replyText(replyToken, throwable.getMessage());
                                     return;
@@ -119,8 +119,28 @@ public class LineBotController {
             default:
                 log.info("Return echo message %s : %s", replyToken, text);
                 this.replyText(replyToken,"ว่าใด"+ text);
-        }
+        
+            case "Phayao": {
+                String userId = event.getSource().getUserId();
+                if (userId != null) {
+                    lineMessagingClient.getProfile(userId)
+                            .whenComplete((phayao, throwable)  ->   {
+                            if (throwable != null) {
+                                this.replyText(replyToken, throwable.getMessage());
+                                return;
+                            }
+                            this.reply(replyToken, Arrays.asList(
+                                    new TextMessage("จังหวัดพะเยาเองอิอิ")
+                                    ));
+                        });
+                }
+                break;
+            }
+            
     }
+}
+
+    
 
     private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
