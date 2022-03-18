@@ -120,7 +120,7 @@ public class LineBotController {
                 log.info("Return echo message %s : %s", replyToken, text);
                 this.replyText(replyToken,"ว่าใด"+ text);
         
-            case "Phayao": {
+            case "พะเยา": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
                     lineMessagingClient.getProfile(userId)
@@ -130,8 +130,12 @@ public class LineBotController {
                                 return;
                             }
                             this.reply(replyToken, Arrays.asList(
-                                    new TextMessage("จังหวัดพะเยาเองอิอิ")
+                                    new TextMessage("จังหวัดพะเยาเอง")
                                     ));
+                            this.reply(replyToken, Arrays.asList(
+                                new TextMessage("https://www.google.com/maps/place/Phayao/@19.2672932,99.0371395,8z/data=!3m1!4b1!4m5!3m4!1s0x30d82120f437301b:0x195a4b21f6c96a8c!8m2!3d19.2154367!4d100.2023692")
+
+                            ));
                         });
                 }
                 break;
