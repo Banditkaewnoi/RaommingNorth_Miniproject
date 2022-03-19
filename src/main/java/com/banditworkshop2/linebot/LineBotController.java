@@ -39,7 +39,7 @@ import java.util.concurrent.ExecutionException;
 
 @Slf4j
 @LineMessageHandler
-public class LineBotController {
+abstract class LineBotController {
     @Autowired
     protected LineMessagingClient lineMessagingClient;
 
