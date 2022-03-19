@@ -93,7 +93,7 @@ public class LineBotController {
 
     }
 
-    private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
+    protected void handleTextContent(String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text);
