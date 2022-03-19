@@ -41,7 +41,7 @@ import java.util.concurrent.ExecutionException;
 @LineMessageHandler
 public class LineBotController {
     @Autowired
-    private LineMessagingClient lineMessagingClient;
+    protected LineMessagingClient lineMessagingClient;
 
     @EventMapping
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
@@ -87,7 +87,7 @@ public class LineBotController {
             reply(replyToken, new ImageMessage(jpg.getUri(), previewImage.getUri()));
 
         } catch (InterruptedException | ExecutionException e) {
-            reply(replyToken, new TextMessage("Cannot get image: " + content));
+            reply(replyToken, new TextMessage("กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D "));
             throw new RuntimeException(e);
         }
 
@@ -118,7 +118,7 @@ public class LineBotController {
             }
             default:
                 log.info("Return echo message %s : %s", replyToken, text);
-                this.replyText(replyToken, "ว่าใด" + text);
+                this.replyText(replyToken, "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D " + text);
 
             case "พะเยา": {
                 String userId = event.getSource().getUserId();
@@ -132,7 +132,9 @@ public class LineBotController {
                                 this.reply(replyToken, Arrays.asList(
                                         new TextMessage("จังหวัดพะเยาเอง"),
                                         new TextMessage(
-                                                "https://www.google.com/maps/place/Phayao/@19.2672932,99.0371395,8z/data=!3m1!4b1!4m5!3m4!1s0x30d82120f437301b:0x195a4b21f6c96a8c!8m2!3d19.2154367!4d100.2023692")));
+                                                "https://www.google.com/maps/place/Phayao/@19.2672932,99.0371395,8z/data=!3m1!4b1!4m5!3m4!1s0x30d82120f437301b:0x195a4b21f6c96a8c!8m2!3d19.2154367!4d100.2023692")
+                                          
+                                                ));
 
                             });
                 }
@@ -147,7 +149,7 @@ public class LineBotController {
                 content.getPackageId(), content.getStickerId()));
     }
 
-    private void replyText(@NonNull String replyToken, @NonNull String message) {
+    protected void replyText(@NonNull String replyToken, @NonNull String message) {
         if (replyToken.isEmpty()) {
             throw new IllegalArgumentException("replyToken is not empty");
         }
@@ -162,7 +164,7 @@ public class LineBotController {
         reply(replyToken, Collections.singletonList(message));
     }
 
-    private void reply(@NonNull String replyToken, @NonNull List<Message> messages) {
+    protected void reply(@NonNull String replyToken, @NonNull List<Message> messages) {
         try {
             BotApiResponse response = lineMessagingClient.replyMessage(
                     new ReplyMessage(replyToken, messages)).get();
