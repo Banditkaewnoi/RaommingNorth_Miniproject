@@ -28,6 +28,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UncheckedIOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
@@ -39,7 +40,7 @@ import java.util.concurrent.ExecutionException;
 
 @Slf4j
 @LineMessageHandler
-abstract class LineBotController {
+public class LineBotController   {
     @Autowired
     protected LineMessagingClient lineMessagingClient;
 
@@ -87,7 +88,8 @@ abstract class LineBotController {
             reply(replyToken, new ImageMessage(jpg.getUri(), previewImage.getUri()));
 
         } catch (InterruptedException | ExecutionException e) {
-            reply(replyToken, new TextMessage("กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D "));
+            reply(replyToken,
+                    new TextMessage("กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D "));
             throw new RuntimeException(e);
         }
 
@@ -118,10 +120,12 @@ abstract class LineBotController {
             }
             default:
                 log.info("Return echo message %s : %s", replyToken, text);
-                this.replyText(replyToken, "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D " + text);
+                this.replyText(replyToken,
+                        "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D " + text);
 
             case "พะเยา": {
                 String userId = event.getSource().getUserId();
+                String imageUri = createUri("kwanphayao.jpg");
                 if (userId != null) {
                     lineMessagingClient.getProfile(userId)
                             .whenComplete((phayao, throwable) -> {
@@ -132,9 +136,8 @@ abstract class LineBotController {
                                 this.reply(replyToken, Arrays.asList(
                                         new TextMessage("จังหวัดพะเยาเอง"),
                                         new TextMessage(
-                                                "https://www.google.com/maps/place/Phayao/@19.2672932,99.0371395,8z/data=!3m1!4b1!4m5!3m4!1s0x30d82120f437301b:0x195a4b21f6c96a8c!8m2!3d19.2154367!4d100.2023692")
-                                          
-                                                ));
+                                                "https://www.google.com/maps/place/Phayao/@19.2672932,99.0371395,8z/data=!3m1!4b1!4m5!3m4!1s0x30d82120f437301b:0x195a4b21f6c96a8c!8m2!3d19.2154367!4d100.2023692"),
+                                        new ImageMessage(imageUri, replyToken)));
 
                             });
                 }
@@ -199,7 +202,7 @@ abstract class LineBotController {
         }
     }
 
-    private static DownloadedContent createTempFile(String ext) {
+    protected static DownloadedContent createTempFile(String ext) {
         String fileName = LocalDateTime.now() + "-" + UUID.randomUUID().toString() + "." + ext;
         Path tempFile = Application.downloadedContentDir.resolve(fileName);
         tempFile.toFile().deleteOnExit();
