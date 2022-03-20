@@ -97,10 +97,4 @@ public class RomingNorth extends LineBotController {
         }
     }
 
-    @Value
-    public static class DownloadedContent<uri> {
-        Path path;
-        String uri;
-    }
-
 }
