@@ -10,7 +10,7 @@ public class RomingNorth extends LineBotController{
         String text = content.getText();
         switch (text) {
             
-            case "พะเยาc": {
+            case "พะเยา": {
                 
 
                 this.reply(replyToken, Arrays.asList(
