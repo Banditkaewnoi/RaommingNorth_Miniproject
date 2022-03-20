@@ -1,14 +1,17 @@
 package com.banditworkshop2.linebot;
 
+import java.nio.file.Path;
 import java.util.Arrays;
 
 import com.linecorp.bot.model.event.Event;
 import com.linecorp.bot.model.event.message.TextMessageContent;
 import com.linecorp.bot.model.message.TextMessage;
 
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
-public  class RomingNorth extends LineBotController {
+public class RomingNorth extends LineBotController {
     private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
 
@@ -60,6 +63,10 @@ public  class RomingNorth extends LineBotController {
         }
     }
 
-    
-    
+    @Value
+    public static class DownloadedContent {
+        Path path;
+        String uri;
+    }
+
 }
