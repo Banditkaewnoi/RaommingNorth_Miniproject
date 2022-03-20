@@ -124,12 +124,13 @@ public class LineBotController {
                         "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D " + text);
 
             case "พะเยา": {
-                String userId = event.getSource().getUserId();
+                
 
                 this.reply(replyToken, Arrays.asList(
-                        new TextMessage(""),
+                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : กว๊านพะเยา"),
                         new TextMessage(
-                                "https://www.google.com/maps/place/Phayao/@19.2672932,99.0371395,8z/data=!3m1!4b1!4m5!3m4!1s0x30d82120f437301b:0x195a4b21f6c96a8c!8m2!3d19.2154367!4d100.2023692")));
+                                "https://goo.gl/maps/xEiU7E45y8PcgMSr7"),
+                        new TextMessage("https://travel.trueid.net/detail/X9zwqekRaBjZ")));
 
             }
                 ;
