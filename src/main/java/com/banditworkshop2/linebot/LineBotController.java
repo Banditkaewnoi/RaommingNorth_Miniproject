@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutionException;
 
 @Slf4j
 @LineMessageHandler
-public class LineBotController {
+public class LineBotController extends RomingNorth {
     @Autowired
     protected LineMessagingClient lineMessagingClient;
 
@@ -96,9 +96,16 @@ public class LineBotController {
                         new TextMessage("https://travel.trueid.net/detail/X9zwqekRaBjZ")));
 
             }
+            case "ลำปาง": {
+                
+                this.reply(replyToken,(Message) Lampang);
+
+        }
+            }
                 ;
         }
-    }
+    
+    
 
     private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
