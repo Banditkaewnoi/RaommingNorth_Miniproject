@@ -30,9 +30,6 @@ import java.util.concurrent.ExecutionException;
 public class LineBotController extends RomingNorth {
     @Autowired
     protected LineMessagingClient lineMessagingClient;
-    private String replyToken;
-    private List<TextMessage> lampang2;
-    private String replyToken2;
 
     @EventMapping
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
@@ -93,7 +90,7 @@ public class LineBotController extends RomingNorth {
                 
 
                 this.reply(replyToken, Arrays.asList(
-                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : กว๊านพะเยา"),
+                        new TextMessage(this.Lampang),
                         new TextMessage(
                                 "https://goo.gl/maps/xEiU7E45y8PcgMSr7"),
                         new TextMessage("https://travel.trueid.net/detail/X9zwqekRaBjZ")));
@@ -101,8 +98,8 @@ public class LineBotController extends RomingNorth {
             }
             case "ลำปาง": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage(this.Lampang),
-                    new TextMessage(this.Lampang1)
+                    new TextMessage(this.Lampang)
+                    
                 ));
             }
             }
@@ -112,7 +109,7 @@ public class LineBotController extends RomingNorth {
 
     
 
-    private void handleStickerContent(String replyToken, StickerMessageContent content) {
+    private void handleStickerContent (String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
                 content.getPackageId(), content.getStickerId()));
     }
