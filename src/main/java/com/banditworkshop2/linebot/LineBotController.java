@@ -90,12 +90,13 @@ public class LineBotController extends RomingNorth {
                 
 
                 this.reply(replyToken, Arrays.asList(
-                        new TextMessage(this.Lampang),
+                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : กว๊านพะเยา"),
                         new TextMessage(
                                 "https://goo.gl/maps/xEiU7E45y8PcgMSr7"),
                         new TextMessage("https://travel.trueid.net/detail/X9zwqekRaBjZ")));
 
             }
+            
             case "ลำปาง": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage(this.Lampang)
