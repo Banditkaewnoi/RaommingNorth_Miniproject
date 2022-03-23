@@ -22,13 +22,19 @@ import afu.org.checkerframework.checker.nullness.qual.NonNull;
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RomingNorth{
- protected List<TextMessage> Lampang;
+ protected String Lampang, Lampang1;
 
- private void setLampange(){
+ private void setLampang(){
      this.Lampang = Lampang;
-     this.Lampang = Arrays.asList(new TextMessage ("ลำปาง"));
+     this.Lampang = "สถานที่ท่องเที่ยวที่แนะนำ : พิพิธภัณฑ์เซรามิกธนบดี";
+     
  }
- private List<TextMessage> getLampang(){
+ private void setLampang1(){
+    this.Lampang1 = Lampang1;
+    this.Lampang1 = "https://g.page/MuseumDhanabadee?share";
+    
+}
+ private String getLampang(){
      return this.Lampang;
  }
 }

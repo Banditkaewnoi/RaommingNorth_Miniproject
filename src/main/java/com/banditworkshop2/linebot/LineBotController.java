@@ -30,6 +30,9 @@ import java.util.concurrent.ExecutionException;
 public class LineBotController extends RomingNorth {
     @Autowired
     protected LineMessagingClient lineMessagingClient;
+    private String replyToken;
+    private List<TextMessage> lampang2;
+    private String replyToken2;
 
     @EventMapping
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
@@ -97,16 +100,17 @@ public class LineBotController extends RomingNorth {
 
             }
             case "ลำปาง": {
-                this.replyText(replyToken, this.Lampang);
+                this.reply(replyToken, Arrays.asList(
+                    new TextMessage(this.Lampang),
+                    new TextMessage(this.Lampang1)
+                ));
             }
             }
                 ;
         }
     
-    
 
-    private void replyText(String replyToken, List<TextMessage> lampang) {
-    }
+    
 
     private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
