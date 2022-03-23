@@ -19,7 +19,6 @@ import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -57,7 +56,6 @@ public class LineBotController extends RomingNorth {
                 message.getLongitude()));
     }
 
-
     private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
 
@@ -87,30 +85,26 @@ public class LineBotController extends RomingNorth {
                         "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
 
             case "พะเยา": {
-                
 
                 this.reply(replyToken, Arrays.asList(
-                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : กว๊านพะเยา"),
+                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : กว๊านพะเยา++"),
                         new TextMessage(
                                 "https://goo.gl/maps/xEiU7E45y8PcgMSr7"),
                         new TextMessage("https://travel.trueid.net/detail/X9zwqekRaBjZ")));
 
             }
-            
+
             case "ลำปาง": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage(Lampang)
-                    
+                        new TextMessage(Lampang)
+
                 ));
             }
-            }
-                ;
         }
-    
+        ;
+    }
 
-    
-
-    private void handleStickerContent (String replyToken, StickerMessageContent content) {
+    private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
                 content.getPackageId(), content.getStickerId()));
     }
