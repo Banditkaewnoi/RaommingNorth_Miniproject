@@ -84,7 +84,7 @@ public class LineBotController extends RomingNorth {
             default:
                 log.info("Return echo message %s : %s", replyToken, text);
                 this.replyText(replyToken,
-                        "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D " + text);
+                        "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
 
             case "พะเยา": {
                 
@@ -99,7 +99,7 @@ public class LineBotController extends RomingNorth {
             
             case "ลำปาง": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage(this.Lampang)
+                    new TextMessage(Lampang)
                     
                 ));
             }

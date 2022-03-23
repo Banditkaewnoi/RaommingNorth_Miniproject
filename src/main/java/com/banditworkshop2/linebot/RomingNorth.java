@@ -23,14 +23,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RomingNorth{
     protected String Lampang,Lampang1;
- protected void Lampang (String lampang,String lampang1){
-     this.Lampang = lampang;
-     this.Lampang1 = lampang1;
+ protected void setLampang (String lampang){
+     lampang = "สถานที่ท่องเที่ยวแนะนำ";
+  
 
  }
- protected void showLampang(String lampang,String lampang1){
-     this.Lampang = "สถานที่ท่องเที่ยวที่แนะนำ : พิพิธภัณฑ์เซรามิกธนบดี";
- }
+
 
  
  }
