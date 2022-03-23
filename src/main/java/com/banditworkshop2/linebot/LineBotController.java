@@ -99,7 +99,7 @@ public class LineBotController extends RomingNorth {
             
             case "ลำปาง": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage(this.Lampang)
+                    new TextMessage(getLampang())
                     
                 ));
             }
