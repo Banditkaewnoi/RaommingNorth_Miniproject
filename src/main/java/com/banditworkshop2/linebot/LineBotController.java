@@ -97,15 +97,16 @@ public class LineBotController extends RomingNorth {
 
             }
             case "ลำปาง": {
-                
-                this.reply(replyToken,(Message) Lampang);
-
-        }
+                this.replyText(replyToken, this.Lampang);
+            }
             }
                 ;
         }
     
     
+
+    private void replyText(String replyToken, List<TextMessage> lampang) {
+    }
 
     private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
