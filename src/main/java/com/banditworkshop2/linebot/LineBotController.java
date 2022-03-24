@@ -101,11 +101,12 @@ public class LineBotController extends RomingNorth {
     };
 
     private void handleTextContent (String replyToken, Event event, TextMessageContent content) {
-        String text = content.getText();
+    
+        String itext = content.getText();
 
-        log.info("Got text message from %s : %s", replyToken, text);
+        log.info("Got text message from %s : %s", replyToken, itext);
 
-        switch (text) {
+        switch (itext) {
             case "Profile": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
