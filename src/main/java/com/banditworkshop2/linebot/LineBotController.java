@@ -63,11 +63,10 @@ public class LineBotController extends RomingNorth {
 
 
     private void handleTextContent2(String replyToken, Event event,TextMessageContent content) {
-        String text = content.getText();
-        log.info("Got text message from %s : %s", replyToken, text);
-        switch (text) {
+        String itext = content.getText();
+        log.info("Got text message from %s : %s", replyToken, itext);
+        switch (itext) {
             case "ลำปาง": {
-
                 this.reply(replyToken, Arrays.asList(
                         new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++")
                         ));
@@ -105,7 +104,7 @@ public class LineBotController extends RomingNorth {
                 this.replyText(replyToken,
                         "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
 
-            case "ลำปาง":{
+            case "ลำปาง":{handleTextContent2(text, event, content);
 
             }
             }
