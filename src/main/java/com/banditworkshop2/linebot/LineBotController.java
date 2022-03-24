@@ -62,8 +62,9 @@ public class LineBotController extends RomingNorth {
     }
 
 
-    private void EditTextMessage(String replyToken,TextMessageContent content) {
+    private void EditTextMessage(String replyToken, TextMessageContent content) {
         String text = content.getText();
+        log.info("Got text message from %s : %s", replyToken, text);
         switch (text) {
             case "ลำปาง": {
 
