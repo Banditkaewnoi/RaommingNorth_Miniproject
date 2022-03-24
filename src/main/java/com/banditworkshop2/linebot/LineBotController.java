@@ -36,11 +36,6 @@ public class LineBotController extends RomingNorth {
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
     }
-    // public void handleTextMessage2(MessageEvent<TextMessageContent> event) {
-    //     log.info(event.toString());
-    //     TextMessageContent message = event.getMessage();
-    //     handleTextContent2(event.getReplyToken(),message);
-    // }
 
     @EventMapping
     public void handleStickerMessage(MessageEvent<StickerMessageContent> event) {
@@ -61,22 +56,7 @@ public class LineBotController extends RomingNorth {
                 message.getLongitude()));
     }
 
-
-    // private void handleTextContent2(String replyToken,TextMessageContent content) {
-    //     String text = content.getText();
-    //     log.info("Got text message from %s : %s", replyToken, text);
-    //     switch (text) {
-    //         case "ลำปาง": {
-    //             this.replyText(replyToken,Lampang
-                        
-    //                     );
-
-    //         }
-    //     }
-
-    // };
-
-    private void handleTextContent (String replyToken, Event event, TextMessageContent content) {
+    private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text);
@@ -104,18 +84,24 @@ public class LineBotController extends RomingNorth {
                 this.replyText(replyToken,
                         "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
             case "ลำปาง": {
-                   this.replyText(replyToken,Lampang
-                                    
-                       );
-            
-                        }
-                    }
+                this.reply(replyToken, Arrays.asList(
+                        new TextMessage(" สถานที่ท่องเที่ยวแนะนำ : เหมืองแม่เมาะ "),
+                        new TextMessage(" ข้อมูลสถานที่ : https://www.facebook.com/MaemohEGAT "),
+                        new TextMessage(" พิกัด : https://goo.gl/maps/jyDpR6Pji5tnY4116  "),
+                        new TextMessage(" สถานที่ท่องเที่ยวเพิ่มเติม : https://travel.trueid.net/detail/jXqlkRaLX5p")));
             }
-            
-        
-        
-    
+            case "พะเยา": {
+                this.reply(replyToken, Arrays.asList(
+                        new TextMessage(" สถานที่ท่องเที่ยวแนะนำ : กว๊านพะเยา "),
+                        new TextMessage(" ข้อมูลสถานที่ : https://www.facebook.com/MaemohEGAT "),
+                        new TextMessage(
+                                " พิกัด : https://travel.trueid.net/detail/3KJNLYNxdRA?utm_source=web-trueid&utm_medium=ctw&utm_term=clicklink&utm_campaign=travel_X9zwqekRaBjZ_relatecontent_travel_3KJNLYNxdRA_25/01/2022 "),
+                        new TextMessage(
+                                " สถานที่ท่องเที่ยวเพิ่มเติม : https://travel.trueid.net/detail/X9zwqekRaBjZ")));
+            }
 
+        }
+    }
 
     private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
@@ -140,10 +126,9 @@ public class LineBotController extends RomingNorth {
     protected void reply(@NonNull String replyToken, @NonNull List<Message> messages) {
         try {
             BotApiResponse response = lineMessagingClient.replyMessage(
-                    new ReplyMessage(replyToken,messages)).get();
+                    new ReplyMessage(replyToken, messages)).get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         }
     }
-
 }
