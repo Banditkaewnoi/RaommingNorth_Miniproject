@@ -38,8 +38,8 @@ public class LineBotController extends RomingNorth {
     }
     public void EditTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
-        TextMessageContent imessage = event.getMessage();
-        EditTextMessage(event.getReplyToken(),event, imessage);
+        TextMessageContent message = event.getMessage();
+        EditTextContent(event.getReplyToken(),event, message);
     }
 
     @EventMapping
@@ -62,10 +62,27 @@ public class LineBotController extends RomingNorth {
     }
 
 
-    private void EditTextMessage(String replyToken,Event event,TextMessageContent content) {
-        String itext = content.getText();
-        log.info("Got text message from %s : %s", replyToken, itext);
-        switch (itext) {
+    private void EditTextContent(String replyToken, Event event,TextMessageContent content) {
+        String text = content.getText();
+        log.info("Got text message from %s : %s", replyToken, text);
+        switch (text) {
+            case "ลำปาง": {
+
+                this.reply(replyToken, Arrays.asList(
+                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++")
+                        ));
+
+            }
+        }
+
+    };
+
+    private void handleTextContent (String replyToken, Event event, TextMessageContent content) {
+        String text = content.getText();
+
+        log.info("Got text message from %s : %s", replyToken, text);
+
+        switch (text) {
             case "Profile": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
@@ -84,47 +101,9 @@ public class LineBotController extends RomingNorth {
                 break;
             }
             default:
-                log.info("Return echo message %s : %s", replyToken, itext);
+                log.info("Return echo message %s : %s", replyToken, text);
                 this.replyText(replyToken,
                         "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
-
-            case "ลำปาง": {
-
-                this.reply(replyToken, Arrays.asList(
-                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++"),
-                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : --")
-                        ));
-
-            }
-        }
-
-    };
-
-    private void handleTextContent (String replyToken, Event event, TextMessageContent content) {
-    
-        String itext = content.getText();
-
-        log.info("Got text message from %s : %s", replyToken, itext);
-
-        switch (itext) {
-            case "Profile": {
-                String userId = event.getSource().getUserId();
-                if (userId != null) {
-                    lineMessagingClient.getProfile(userId)
-                            .whenComplete((profile, throwable) -> {
-                                if (throwable != null) {
-                                    this.replyText(replyToken, throwable.getMessage());
-                                    return;
-                                }
-                                this.reply(replyToken, Arrays.asList(
-                                        new TextMessage("Display name: " + profile.getDisplayName()),
-                                        new TextMessage("Status message: " + profile.getStatusMessage()),
-                                        new TextMessage("User ID: " + profile.getUserId())));
-                            });
-                }
-                break;
-            }
-            
 
             
             }
