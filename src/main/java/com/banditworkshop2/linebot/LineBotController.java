@@ -38,8 +38,8 @@ public class LineBotController extends RomingNorth {
     }
     public void EditTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
-        TextMessageContent message = event.getMessage();
-        EditTextMessage(event.getReplyToken(),event, message);
+        TextMessageContent imessage = event.getMessage();
+        EditTextMessage(event.getReplyToken(),event, imessage);
     }
 
     @EventMapping
@@ -63,9 +63,9 @@ public class LineBotController extends RomingNorth {
 
 
     private void EditTextMessage(String replyToken,Event event,TextMessageContent content) {
-        String Etext = content.getText();
-        log.info("Got text message from %s : %s", replyToken, Etext);
-        switch (Etext) {
+        String itext = content.getText();
+        log.info("Got text message from %s : %s", replyToken, itext);
+        switch (itext) {
             case "Profile": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
@@ -84,14 +84,15 @@ public class LineBotController extends RomingNorth {
                 break;
             }
             default:
-                log.info("Return echo message %s : %s", replyToken, Etext);
+                log.info("Return echo message %s : %s", replyToken, itext);
                 this.replyText(replyToken,
                         "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
 
             case "ลำปาง": {
 
                 this.reply(replyToken, Arrays.asList(
-                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++")
+                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++"),
+                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : --")
                         ));
 
             }
