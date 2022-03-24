@@ -36,11 +36,11 @@ public class LineBotController extends RomingNorth {
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
     }
-    public void handleTextMessage2(MessageEvent<TextMessageContent> event) {
-        log.info(event.toString());
-        TextMessageContent message = event.getMessage();
-        handleTextContent2(event.getReplyToken(),event, message);
-    }
+    // public void handleTextMessage2(MessageEvent<TextMessageContent> event) {
+    //     log.info(event.toString());
+    //     TextMessageContent message = event.getMessage();
+    //     handleTextContent2(event.getReplyToken(),message);
+    // }
 
     @EventMapping
     public void handleStickerMessage(MessageEvent<StickerMessageContent> event) {
@@ -62,19 +62,19 @@ public class LineBotController extends RomingNorth {
     }
 
 
-    private void handleTextContent2(String replyToken, Event event,TextMessageContent content) {
-        String itext = content.getText();
-        log.info("Got text message from %s : %s", replyToken, itext);
-        switch (itext) {
-            case "ลำปาง": {
-                this.reply(replyToken, Arrays.asList(
-                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++")
-                        ));
+    // private void handleTextContent2(String replyToken,TextMessageContent content) {
+    //     String text = content.getText();
+    //     log.info("Got text message from %s : %s", replyToken, text);
+    //     switch (text) {
+    //         case "ลำปาง": {
+    //             this.replyText(replyToken,Lampang
+                        
+    //                     );
 
-            }
-        }
+    //         }
+    //     }
 
-    };
+    // };
 
     private void handleTextContent (String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
@@ -103,13 +103,16 @@ public class LineBotController extends RomingNorth {
                 log.info("Return echo message %s : %s", replyToken, text);
                 this.replyText(replyToken,
                         "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
-
-            case "ลำปาง":{handleTextContent2(text, event, content);
-
-            }
+            case "ลำปาง": {
+                   this.replyText(replyToken,Lampang
+                                    
+                       );
+            
+                        }
+                    }
             }
             
-        }
+        
         
     
 
@@ -137,7 +140,7 @@ public class LineBotController extends RomingNorth {
     protected void reply(@NonNull String replyToken, @NonNull List<Message> messages) {
         try {
             BotApiResponse response = lineMessagingClient.replyMessage(
-                    new ReplyMessage(replyToken, messages)).get();
+                    new ReplyMessage(replyToken,messages)).get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         }
