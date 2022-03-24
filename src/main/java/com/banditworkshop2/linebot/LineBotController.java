@@ -35,6 +35,10 @@ public class LineBotController extends RomingNorth {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
+    }
+    public void EditTextMessage(MessageEvent<TextMessageContent> event) {
+        log.info(event.toString());
+        TextMessageContent message = event.getMessage();
         EditTextMessage(event.getReplyToken(), message);
     }
 
