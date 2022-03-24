@@ -61,6 +61,21 @@ public class LineBotController extends RomingNorth {
                 message.getLongitude()));
     }
 
+
+    private void EditTextMessage(String replyToken,TextMessageContent content) {
+        String text = content.getText();
+        switch (text) {
+            case "ลำปาง": {
+
+                this.reply(replyToken, Arrays.asList(
+                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++")
+                        ));
+
+            }
+        }
+
+    };
+
     private void handleTextContent (String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
 
@@ -94,19 +109,7 @@ public class LineBotController extends RomingNorth {
         }
         
     
-    private void EditTextMessage(String replyToken,TextMessageContent content) {
-        String Etext = content.getText();
-        switch (Etext) {
-            case "ลำปาง": {
 
-                this.reply(replyToken, Arrays.asList(
-                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++")
-                        ));
-
-            }
-        }
-
-    };
 
     private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(
