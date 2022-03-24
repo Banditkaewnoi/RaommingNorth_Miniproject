@@ -87,7 +87,7 @@ public class LineBotController extends RomingNorth {
                 this.reply(replyToken, Arrays.asList(
                         new TextMessage(" สถานที่ท่องเที่ยวแนะนำ : เหมืองแม่เมาะ "),
                         new TextMessage(" ข้อมูลสถานที่ : https://www.facebook.com/MaemohEGAT "),
-                        new TextMessage(" พิกัด : https://goo.gl/maps/jyDpR6Pji5tnY4116  "),
+                        new TextMessage(" https://goo.gl/maps/jyDpR6Pji5tnY4116"),
                         new TextMessage(" สถานที่ท่องเที่ยวเพิ่มเติม : https://travel.trueid.net/detail/jXqlkRaLX5p")));
             }
             case "พะเยา": {
@@ -99,6 +99,7 @@ public class LineBotController extends RomingNorth {
                         new TextMessage(
                                 " สถานที่ท่องเที่ยวเพิ่มเติม : https://travel.trueid.net/detail/X9zwqekRaBjZ")));
             }
+            
 
         }
     }
