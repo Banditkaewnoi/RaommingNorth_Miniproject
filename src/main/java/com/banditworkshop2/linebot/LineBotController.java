@@ -35,6 +35,7 @@ public class LineBotController extends RomingNorth {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
+        EditTextMessage(event.getReplyToken(), message);
     }
 
     @EventMapping
@@ -56,7 +57,7 @@ public class LineBotController extends RomingNorth {
                 message.getLongitude()));
     }
 
-    private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
+    private void handleTextContent (String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text);
@@ -90,8 +91,8 @@ public class LineBotController extends RomingNorth {
         
     
     private void EditTextMessage(String replyToken,TextMessageContent content) {
-        String text = content.getText();
-        switch (text) {
+        String Etext = content.getText();
+        switch (Etext) {
             case "ลำปาง": {
 
                 this.reply(replyToken, Arrays.asList(
