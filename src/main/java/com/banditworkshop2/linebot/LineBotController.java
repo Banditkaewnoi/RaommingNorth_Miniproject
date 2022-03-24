@@ -84,25 +84,24 @@ public class LineBotController extends RomingNorth {
                 this.replyText(replyToken,
                         "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
 
-            case "พะเยา": {
-
-                this.reply(replyToken, Arrays.asList(
-                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : กว๊านพะเยา++"),
-                        new TextMessage(
-                                "https://goo.gl/maps/xEiU7E45y8PcgMSr7"),
-                        new TextMessage("https://travel.trueid.net/detail/X9zwqekRaBjZ")));
-
-            }
-
-            case "ลำปาง": {
-                this.reply(replyToken, Arrays.asList(
-                        new TextMessage(Lampang)
-
-                ));
+            
             }
         }
-        ;
-    }
+        
+    
+    private void EditTextMessage(String replyToken,TextMessageContent content) {
+        String text = content.getText();
+        switch (text) {
+            case "ลำปาง": {
+
+                this.reply(replyToken, Arrays.asList(
+                        new TextMessage("สถานที่ท่องเที่ยวที่แนะนำ : ++")
+                        ));
+
+            }
+        }
+
+    };
 
     private void handleStickerContent(String replyToken, StickerMessageContent content) {
         reply(replyToken, new StickerMessage(

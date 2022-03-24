@@ -28,7 +28,9 @@ public class RomingNorth{
   
 
  }
-
+ protected String getLampang(){
+     return Lampang;
+ }
 
  
  }
