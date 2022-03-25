@@ -42,7 +42,7 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
     private Box createBodyBlock() {
             
         final Text title = Text.builder()
-                .text("เหมืองแม่เมาะ")
+                .text("ไร่ชาฉุยฟง")
                 .color("#075673")
                 .weight(Text.TextWeight.BOLD)
                 .size(FlexFontSize.XL)
@@ -114,13 +114,19 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
                 .height(ButtonHeight.MEDIUM)
                 .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม", "https://travel.trueid.net/detail/jXqlkRaLX5p"))
                 .color("#000000")
-                
+                .build();
+        final Button locAction = Button.builder()
+                .style(Button.ButtonStyle.LINK)
+                .height(ButtonHeight.SMALL)
+                .action(new URIAction("พิกัด",
+                                "https://goo.gl/maps/PN3f8Ey1SsUUJ9iL7"))
+                .color("#000000")
                 .build();
         final Separator separator = Separator.builder().build();
-        return Box.builder()
+                return Box.builder()
                 .layout(FlexLayout.VERTICAL)
                 .spacing(FlexMarginSize.SM)
-                .contents(asList(spacer, websiteAction, separator, ortherAction))
+                .contents(asList(spacer, websiteAction,separator,locAction,separator, ortherAction))
                 .build();
 
     }

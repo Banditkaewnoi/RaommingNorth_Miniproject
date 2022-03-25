@@ -32,19 +32,19 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
 
         private Image createHeroBlock() {
                 return Image.builder()
-                                .url("https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg")
+                                .url("https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg") //ที่อยู่รูป
                                 .size(Image.ImageSize.FULL_WIDTH)
                                 .aspectRatio(ImageAspectRatio.R20TO13)
                                 .aspectMode(ImageAspectMode.Cover)
                                 .action(new URIAction("label",
-                                                "https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg"))
+                                                "https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg")) //ที่อยู่รูป
                                 .build();
         }
 
         private Box createBodyBlock() {
 
                 final Text title = Text.builder()
-                                .text("กว๊านพะเยา")
+                                .text("กว๊านพะเยา") //ชื่อสถานที่
                                 .color("#075673")
                                 .weight(Text.TextWeight.BOLD)
                                 .size(FlexFontSize.XL)
@@ -70,7 +70,7 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                                                                 .flex(1)
                                                                 .build(),
                                                 Text.builder()
-                                                                .text("อ.เมืองพะเยา, จ.พะเยา")
+                                                                .text("อ.เมืองพะเยา, จ.พะเยา") //ที่อยู่
                                                                 .wrap(true)
                                                                 .color("#666666")
                                                                 .flex(5)
@@ -86,7 +86,7 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                                                                 .flex(1)
                                                                 .build(),
                                                 Text.builder()
-                                                                .text("เปิดตลอดเวลา")
+                                                                .text("เปิดตลอดเวลา") //เวลา
                                                                 .wrap(true)
                                                                 .color("#666666")
                                                                 .size(FlexFontSize.SM)
@@ -120,8 +120,8 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                 final Button locAction = Button.builder()
                                 .style(Button.ButtonStyle.LINK)
                                 .height(ButtonHeight.SMALL)
-                                .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม",
-                                                "https://travel.trueid.net/detail/X9zwqekRaBjZ"))
+                                .action(new URIAction("พิกัด",
+                                                "https://goo.gl/maps/PN3f8Ey1SsUUJ9iL7"))
                                 .color("#000000")
                                 .build();
                 final Separator separator = Separator.builder().build();
