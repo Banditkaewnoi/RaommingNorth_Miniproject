@@ -31,11 +31,11 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
 
     private Image createHeroBlock() {
         return Image.builder()
-                .url("https://cms.dmpcdn.com/travel/2021/07/27/f4aa6420-eeb9-11eb-8793-61b2b4d8b27c_original.jpg")
+                .url("https://cms.dmpcdn.com/travel/2020/09/23/19b141b0-fd8b-11ea-b266-63e567a949c5_original.JPG")
                 .size(Image.ImageSize.FULL_WIDTH)
                 .aspectRatio(ImageAspectRatio.R20TO13)
                 .aspectMode(ImageAspectMode.Cover)
-                .action(new URIAction("label", "https://cms.dmpcdn.com/travel/2021/07/27/f4aa6420-eeb9-11eb-8793-61b2b4d8b27c_original.jpg"))
+                .action(new URIAction("label", "https://cms.dmpcdn.com/travel/2020/09/23/19b141b0-fd8b-11ea-b266-63e567a949c5_original.JPG"))
                 .build();
     }
 

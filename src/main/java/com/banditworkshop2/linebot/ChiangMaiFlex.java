@@ -107,13 +107,13 @@ public class ChiangMaiFlex implements Supplier<FlexMessage> {
                                 .height(ButtonHeight.SMALL)
                                 .color("#000000")
                                 .action(new URIAction("ข้อมูล",
-                                                "https://travel.trueid.net/detail/R0LpNq7vYQR"))
+                                                "https://travel.trueid.net/detail/5vVQRWZjE0JD"))
                                 .build();
                 final Button ortherAction = Button.builder()
                                 .style(Button.ButtonStyle.LINK)
                                 .height(ButtonHeight.SMALL)
                                 .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม",
-                                                "https://travel.trueid.net/detail/R0LpNq7vYQR"))
+                                                "https://travel.trueid.net/detail/K2qVnyVo7MO"))
                                 .color("#000000")
                                 .build();
                 final Button locAction = Button.builder()
