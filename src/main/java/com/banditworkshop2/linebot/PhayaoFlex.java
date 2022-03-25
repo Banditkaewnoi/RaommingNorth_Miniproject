@@ -102,18 +102,17 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
    
     private Box createFooterBlock() {
         final Spacer spacer = Spacer.builder().size(FlexMarginSize.SM).build();
-        final Button ortherAction = Button.builder()
+        final Button websiteAction = Button.builder()
                 .style(Button.ButtonStyle.LINK)
                 .height(ButtonHeight.SMALL)
+                .action(new URIAction("ข้อมูล", "https://www.museumthailand.com/th/1725/storytelling/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2/"))
+                .build();
+        final Button ortherAction = Button.builder()
+                .style(Button.ButtonStyle.LINK)
+                .height(ButtonHeight.MEDIUM)
                 .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม", "https://travel.trueid.net/detail/X9zwqekRaBjZ"))
                 .build();
         final Separator separator = Separator.builder().build();
-        final Button websiteAction = Button.builder()
-                .style(Button.ButtonStyle.LINK)
-                .height(ButtonHeight.MEDIUM)
-                .action(new URIAction("ข้อมูล", "https://www.museumthailand.com/th/1725/storytelling/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2/"))
-                .build();
-
         return Box.builder()
                 .layout(FlexLayout.VERTICAL)
                 .spacing(FlexMarginSize.SM)
