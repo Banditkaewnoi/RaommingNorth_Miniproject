@@ -36,22 +36,23 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                 .size(Image.ImageSize.FULL_WIDTH)
                 .aspectRatio(ImageAspectRatio.R20TO13)
                 .aspectMode(ImageAspectMode.Cover)
-                .action(new URIAction("label", "http://example.com"))
+                .action(new URIAction("label", "https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg"))
                 .build();
     }
 
     private Box createBodyBlock() {
         final Text title = Text.builder()
-                .text("Brown Cafe")
+                .text("กว๊านพะเยา")
+                .color("#052638")
                 .weight(Text.TextWeight.BOLD)
                 .size(FlexFontSize.XL)
                 .build();
-        final Box review = createReviewBox();
+
         final Box info = createInfoBox();
 
         return Box.builder()
                 .layout(FlexLayout.VERTICAL)
-                .contents(asList(title, review, info))
+                .contents(asList(title, info))
                 .build();
     }
 
@@ -67,7 +68,7 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                             .flex(1)
                             .build(),
                         Text.builder()
-                            .text("Silom, Bangkok")
+                            .text("เมืองพะเยา, จังหวัดพะเยา")
                             .wrap(true)
                             .color("#666666")
                             .flex(5)
@@ -83,7 +84,7 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                             .flex(1)
                             .build(),
                         Text.builder()
-                            .text("10:00 - 23:00")
+                            .text("เปิดตลอดเวลา")
                             .wrap(true)
                             .color("#666666")
                             .size(FlexFontSize.SM)
@@ -98,48 +99,25 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                 .build();
     }
 
-    private Box createReviewBox() {
-        final Icon goldStar = Icon.builder()
-                .size(FlexFontSize.SM)
-                .url("https://raw.githubusercontent.com/iphayao/line-bot-spring-boot-flex/master/src/main/resources/img/gold_star.png")
-                .build();
-        final Icon grayStar = Icon.builder()
-                .size(FlexFontSize.SM)
-                .url("https://raw.githubusercontent.com/iphayao/line-bot-spring-boot-flex/master/src/main/resources/img/gray_star.png")
-                .build();
-        final Text point = Text.builder()
-                .text("4.0")
-                .size(FlexFontSize.SM)
-                .color("#999999")
-                .margin(FlexMarginSize.MD)
-                .flex(0)
-                .build();
-
-        return Box.builder()
-                .layout(FlexLayout.BASELINE)
-                .margin(FlexMarginSize.MD)
-                .contents(asList(goldStar, goldStar, goldStar, goldStar, grayStar, point))
-                .build();
-    }
-
+   
     private Box createFooterBlock() {
         final Spacer spacer = Spacer.builder().size(FlexMarginSize.SM).build();
-        final Button callAction = Button.builder()
+        final Button ortherAction = Button.builder()
                 .style(Button.ButtonStyle.LINK)
-                .height(ButtonHeight.MEDIUM)
-                .action(new URIAction("CALL", "tel:00000"))
+                .height(ButtonHeight.SMALL)
+                .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม", "https://travel.trueid.net/detail/X9zwqekRaBjZ"))
                 .build();
         final Separator separator = Separator.builder().build();
         final Button websiteAction = Button.builder()
                 .style(Button.ButtonStyle.LINK)
-                .height(ButtonHeight.SMALL)
-                .action(new URIAction("WEBSITE", "https://example.com"))
+                .height(ButtonHeight.MEDIUM)
+                .action(new URIAction("ข้อมูล", "https://www.museumthailand.com/th/1725/storytelling/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2/"))
                 .build();
 
         return Box.builder()
                 .layout(FlexLayout.VERTICAL)
                 .spacing(FlexMarginSize.SM)
-                .contents(asList(spacer, callAction, separator, websiteAction))
+                .contents(asList(spacer, ortherAction, separator, websiteAction))
                 .build();
 
     }
