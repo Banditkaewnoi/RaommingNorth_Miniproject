@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 import static java.util.Arrays.asList;
 
-public class PhraeFlex implements Supplier<FlexMessage> {
+public class LamphunFlex implements Supplier<FlexMessage> {
         @Override
         public FlexMessage get() {
                 final Image heroBlock = createHeroBlock();
@@ -26,24 +26,24 @@ public class PhraeFlex implements Supplier<FlexMessage> {
                                 .body(bodyBlock)
                                 .footer(footerBlock)
                                 .build();
-                return new FlexMessage("Phrae", bubbleContainer);
+                return new FlexMessage("Lamphun", bubbleContainer);
         }
 
         private Image createHeroBlock() {
                 return Image.builder()
-                                .url("https://mpics.mgronline.com/pics/Images/559000008333710.JPEG") //ที่อยู่รูป
+                                .url("https://api.tourismthailand.org/upload/live/content_article/4-519.png") //ที่อยู่รูป
                                 .size(Image.ImageSize.FULL_WIDTH)
                                 .aspectRatio(ImageAspectRatio.R20TO13)
                                 .aspectMode(ImageAspectMode.Cover)
                                 .action(new URIAction("label",
-                                                "https://mpics.mgronline.com/pics/Images/559000008333710.JPEG")) //ที่อยู่รูป
+                                                "https://api.tourismthailand.org/upload/live/content_article/4-519.png")) //ที่อยู่รูป
                                 .build();
         }
 
         private Box createBodyBlock() {
 
                 final Text title = Text.builder()
-                                .text("วัดพระธาตุอินทร์แขวนจำลอง") //ชื่อสถานที่
+                                .text("น้ำตกก้อหลวง") //ชื่อสถานที่
                                 .color("#075673")
                                 .weight(Text.TextWeight.BOLD)
                                 .size(FlexFontSize.XL)
@@ -69,7 +69,7 @@ public class PhraeFlex implements Supplier<FlexMessage> {
                                                                 .flex(1)
                                                                 .build(),
                                                 Text.builder()
-                                                                .text("ตำบลสวนเขื่อน อำเภอเมืองแพร่ จังหวัดแพร่") //ที่อยู่
+                                                                .text("อ.ลี้, จ.ลำพูน") //ที่อยู่
                                                                 .wrap(true)
                                                                 .color("#666666")
                                                                 .flex(5)
@@ -85,7 +85,7 @@ public class PhraeFlex implements Supplier<FlexMessage> {
                                                                 .flex(1)
                                                                 .build(),
                                                 Text.builder()
-                                                                .text("ไม่แน่ชัด") //เวลา
+                                                                .text("08.00 น. - 17.00 น.") //เวลา
                                                                 .wrap(true)
                                                                 .color("#666666")
                                                                 .size(FlexFontSize.SM)
@@ -107,20 +107,20 @@ public class PhraeFlex implements Supplier<FlexMessage> {
                                 .height(ButtonHeight.SMALL)
                                 .color("#000000")
                                 .action(new URIAction("ข้อมูล",
-                                                "https://www.paiduaykan.com/province/north/phrae/pratadinkwan.html"))
+                                                "https://www.paiduaykan.com/province/north/lamphun/koluangwaterfall.html"))
                                 .build();
                 final Button ortherAction = Button.builder()
                                 .style(Button.ButtonStyle.LINK)
                                 .height(ButtonHeight.SMALL)
                                 .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม",
-                                                "https://travel.trueid.net/detail/ejRD7QwmNq3L"))
+                                                "https://travel.trueid.net/detail/O9Qp80zndyjY"))
                                 .color("#000000")
                                 .build();
                 final Button locAction = Button.builder()
                                 .style(Button.ButtonStyle.LINK)
                                 .height(ButtonHeight.SMALL)
                                 .action(new URIAction("พิกัด",
-                                                "https://goo.gl/maps/6ibcay7iCg9PhJwg8"))
+                                                "https://goo.gl/maps/YQRvLpWWevsz3wbN6"))
                                 .color("#000000")
                                 .build();
                 final Separator separator = Separator.builder().build();
@@ -132,3 +132,4 @@ public class PhraeFlex implements Supplier<FlexMessage> {
 
         }
 }
+

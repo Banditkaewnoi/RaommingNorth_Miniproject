@@ -85,7 +85,7 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
                             .flex(1)
                             .build(),
                         Text.builder()
-                            .text("8.30AM - 5.30PM)")
+                            .text("8.30 น. - 17.30 น.)")
                             .wrap(true)
                             .color("#666666")
                             .size(FlexFontSize.SM)
