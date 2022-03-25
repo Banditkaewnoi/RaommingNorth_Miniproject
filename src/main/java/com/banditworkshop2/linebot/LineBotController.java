@@ -49,6 +49,16 @@ public class LineBotController {
                 break;
             
             }
+            case "ลำปาง": {
+                this.reply(token, new LampangFlex().get());
+                break;
+            
+            }
+            case "เชียงราย": {
+                this.reply(token, new ChiangRaiFlex().get());
+                break;
+            
+            }
             case "จังหวัด":{
                 this.reply(token, Arrays.asList(
                     new TextMessage("พิมพ์ ลำปาง, พะเยา, เชียงราย, เชียงใหม่, แพร่, น่าน, ลำพูน, แพร่, แม่ฮ่องสอน, อุตรดิตถ์ เพื่อดูสถานที่ท่องเที่ยวที่แนะนำ :D")
