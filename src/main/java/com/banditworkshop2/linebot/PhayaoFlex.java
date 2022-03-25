@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 
 import static java.util.Arrays.asList;
 
-public class RomingNorthFlex implements Supplier<FlexMessage> {
+public class PhayaoFlex implements Supplier<FlexMessage> {
     @Override
     public FlexMessage get() {
         final Image heroBlock = createHeroBlock();
@@ -27,12 +27,12 @@ public class RomingNorthFlex implements Supplier<FlexMessage> {
                 .body(bodyBlock)
                 .footer(footerBlock)
                 .build();
-        return new FlexMessage("Restaurant", bubbleContainer);
+        return new FlexMessage("Phayao", bubbleContainer);
     }
 
     private Image createHeroBlock() {
         return Image.builder()
-                .url("https://raw.githubusercontent.com/iphayao/line-bot-spring-boot-flex/master/src/main/resources/img/cafe.png")
+                .url("https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg")
                 .size(Image.ImageSize.FULL_WIDTH)
                 .aspectRatio(ImageAspectRatio.R20TO13)
                 .aspectMode(ImageAspectMode.Cover)

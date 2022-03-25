@@ -43,10 +43,9 @@ public class LineBotController {
 
     private void handleTextContent(String token, Event event, TextMessageContent content) throws IOException {
         String text = content.getText();
-        String userId = event.getSource().getUserId();
         switch (text) {
-            case "Flex Restaurant": {
-                this.reply(token, new RomingNorthFlex().get());
+            case "พะเยา": {
+                this.reply(token, new PhayaoFlex().get());
                 break;
             }
             
