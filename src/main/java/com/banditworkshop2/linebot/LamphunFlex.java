@@ -64,7 +64,7 @@ public class LamphunFlex implements Supplier<FlexMessage> {
                                 .contents(asList(
                                                 Text.builder()
                                                                 .text("Place")
-                                                                .color("#aaaaaa")
+                                                                .color("#8dafba")
                                                                 .size(FlexFontSize.SM)
                                                                 .flex(1)
                                                                 .build(),
@@ -80,7 +80,7 @@ public class LamphunFlex implements Supplier<FlexMessage> {
                                 .spacing(FlexMarginSize.SM)
                                 .contents(asList(
                                                 Text.builder().text("Time")
-                                                                .color("#aaaaaa")
+                                                                .color("#8dafba")
                                                                 .size(FlexFontSize.SM)
                                                                 .flex(1)
                                                                 .build(),

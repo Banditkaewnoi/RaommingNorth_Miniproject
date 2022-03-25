@@ -64,12 +64,12 @@ public class PhraeFlex implements Supplier<FlexMessage> {
                                 .contents(asList(
                                                 Text.builder()
                                                                 .text("Place")
-                                                                .color("#aaaaaa")
+                                                                .color("#8dafba")
                                                                 .size(FlexFontSize.SM)
                                                                 .flex(1)
                                                                 .build(),
                                                 Text.builder()
-                                                                .text("ตำบลสวนเขื่อน อำเภอเมืองแพร่ จังหวัดแพร่") //ที่อยู่
+                                                                .text("อ.เมืองแพร่, จ.แพร่") //ที่อยู่
                                                                 .wrap(true)
                                                                 .color("#666666")
                                                                 .flex(5)
@@ -80,7 +80,7 @@ public class PhraeFlex implements Supplier<FlexMessage> {
                                 .spacing(FlexMarginSize.SM)
                                 .contents(asList(
                                                 Text.builder().text("Time")
-                                                                .color("#aaaaaa")
+                                                                .color("#8dafba")
                                                                 .size(FlexFontSize.SM)
                                                                 .flex(1)
                                                                 .build(),

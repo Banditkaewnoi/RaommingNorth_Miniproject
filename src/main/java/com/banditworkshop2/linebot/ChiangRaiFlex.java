@@ -64,7 +64,7 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
                 .contents(asList(
                         Text.builder()
                             .text("Place")
-                            .color("#aaaaaa")
+                            .color("#8dafba")
                             .size(FlexFontSize.SM)
                             .flex(1)
                             .build(),
@@ -80,12 +80,12 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
                 .spacing(FlexMarginSize.SM)
                 .contents(asList(
                         Text.builder().text("Time")
-                            .color("#aaaaaa")
+                            .color("#8dafba")
                             .size(FlexFontSize.SM)
                             .flex(1)
                             .build(),
                         Text.builder()
-                            .text("8.30 น. - 17.30 น.)")
+                            .text("8.30 น. - 17.30 น.")
                             .wrap(true)
                             .color("#666666")
                             .size(FlexFontSize.SM)

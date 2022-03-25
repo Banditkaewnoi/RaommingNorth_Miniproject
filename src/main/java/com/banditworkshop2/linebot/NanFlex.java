@@ -64,12 +64,12 @@ public class NanFlex implements Supplier<FlexMessage> {
                                 .contents(asList(
                                                 Text.builder()
                                                                 .text("Place")
-                                                                .color("#aaaaaa")
+                                                                .color("#8dafba")
                                                                 .size(FlexFontSize.SM)
                                                                 .flex(1)
                                                                 .build(),
                                                 Text.builder()
-                                                                .text("อำเภอนาหมื่น จังหวัดน่าน") //ที่อยู่
+                                                                .text("อ.นาหมื่น จ.น่าน") //ที่อยู่
                                                                 .wrap(true)
                                                                 .color("#666666")
                                                                 .flex(5)
@@ -80,7 +80,7 @@ public class NanFlex implements Supplier<FlexMessage> {
                                 .spacing(FlexMarginSize.SM)
                                 .contents(asList(
                                                 Text.builder().text("Time")
-                                                                .color("#aaaaaa")
+                                                                .color("#8dafba")
                                                                 .size(FlexFontSize.SM)
                                                                 .flex(1)
                                                                 .build(),
