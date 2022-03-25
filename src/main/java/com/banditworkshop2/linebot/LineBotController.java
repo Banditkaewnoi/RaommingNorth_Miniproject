@@ -1,12 +1,9 @@
 package com.banditworkshop2.linebot;
 
 import com.linecorp.bot.client.LineMessagingClient;
-import com.linecorp.bot.client.MessageContentResponse;
 import com.linecorp.bot.model.ReplyMessage;
 import com.linecorp.bot.model.event.Event;
 import com.linecorp.bot.model.event.MessageEvent;
-import com.linecorp.bot.model.event.message.ImageMessageContent;
-import com.linecorp.bot.model.event.message.LocationMessageContent;
 import com.linecorp.bot.model.event.message.StickerMessageContent;
 import com.linecorp.bot.model.event.message.TextMessageContent;
 import com.linecorp.bot.model.message.*;
@@ -93,11 +90,14 @@ public class LineBotController {
                         new TextMessage(
                                 "พิมพ์ ลำปาง, พะเยา, เชียงราย, เชียงใหม่, แพร่, น่าน, ลำพูน, แพร่, แม่ฮ่องสอน, อุตรดิตถ์ เพื่อดูสถานที่ท่องเที่ยวที่แนะนำ :D")));
             }
-
+            case "พะเย": {
+                this.reply(token,  Arrays.asList(
+                        new TextMessage("พิมพ์ให้มันถูกด้วยครับอิอิ")));
+            }
             default:
                 log.info("Return echo message %s : %s", token, text);
                 this.replyText(token,
-                        "กรุณาพิมพ์ชื่อจังหวัดให้ถูกต้องเพื่อดูรายชื่อจังหวัดในภาคเหนือ ");
+                        "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือให้ถูกต้องด้วยนะครับ :D ");
 
         }
     }
