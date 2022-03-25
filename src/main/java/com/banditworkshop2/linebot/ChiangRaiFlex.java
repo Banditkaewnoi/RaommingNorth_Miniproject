@@ -69,7 +69,7 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
                             .flex(1)
                             .build(),
                         Text.builder()
-                            .text("อ.แม่เมาะ, จ.ลำปาง")
+                            .text("อ.แม่จัน, จ.เชียงราย")
                             .wrap(true)
                             .color("#666666")
                             .flex(5)
@@ -85,7 +85,7 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
                             .flex(1)
                             .build(),
                         Text.builder()
-                            .text("เปิดทุกวัน (สามารถเช็คเวลาในแต่ละโซนได้ที่ กฟผ.แม่เมาะ)")
+                            .text("8.30AM - 5.30PM)")
                             .wrap(true)
                             .color("#666666")
                             .size(FlexFontSize.SM)
@@ -107,19 +107,19 @@ public class ChiangRaiFlex implements Supplier<FlexMessage> {
                 .style(Button.ButtonStyle.LINK)
                 .height(ButtonHeight.SMALL)
                 .color("#000000")
-                .action(new URIAction("ข้อมูล", "https://travel.trueid.net/detail/Ylyb279EP1Ra"))
+                .action(new URIAction("ข้อมูล", "https://www.paiduaykan.com/76_province/north/chiangrai/chouifongtea.html"))
                 .build();
         final Button ortherAction = Button.builder()
                 .style(Button.ButtonStyle.LINK)
                 .height(ButtonHeight.MEDIUM)
-                .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม", "https://travel.trueid.net/detail/jXqlkRaLX5p"))
+                .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม", "https://travel.trueid.net/detail/R0LpNq7vYQR"))
                 .color("#000000")
                 .build();
         final Button locAction = Button.builder()
                 .style(Button.ButtonStyle.LINK)
                 .height(ButtonHeight.SMALL)
                 .action(new URIAction("พิกัด",
-                                "https://goo.gl/maps/PN3f8Ey1SsUUJ9iL7"))
+                                "https://goo.gl/maps/kNxE2wugCKkU4kPR8"))
                 .color("#000000")
                 .build();
         final Separator separator = Separator.builder().build();

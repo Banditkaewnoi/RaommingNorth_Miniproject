@@ -1,5 +1,4 @@
 package com.banditworkshop2.linebot;
-
 import com.linecorp.bot.model.action.URIAction;
 import com.linecorp.bot.model.message.FlexMessage;
 import com.linecorp.bot.model.message.flex.component.*;
@@ -12,9 +11,10 @@ import com.linecorp.bot.model.message.flex.unit.FlexLayout;
 import com.linecorp.bot.model.message.flex.unit.FlexMarginSize;
 
 import java.util.function.Supplier;
+
 import static java.util.Arrays.asList;
 
-public class PhayaoFlex implements Supplier<FlexMessage> {
+public class PhraeFlex implements Supplier<FlexMessage> {
         @Override
         public FlexMessage get() {
                 final Image heroBlock = createHeroBlock();
@@ -26,24 +26,24 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                                 .body(bodyBlock)
                                 .footer(footerBlock)
                                 .build();
-                return new FlexMessage("Phayao", bubbleContainer);
+                return new FlexMessage("Phrae", bubbleContainer);
         }
 
         private Image createHeroBlock() {
                 return Image.builder()
-                                .url("https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg") //ที่อยู่รูป
+                                .url("https://mpics.mgronline.com/pics/Images/559000008333710.JPEG") //ที่อยู่รูป
                                 .size(Image.ImageSize.FULL_WIDTH)
                                 .aspectRatio(ImageAspectRatio.R20TO13)
                                 .aspectMode(ImageAspectMode.Cover)
                                 .action(new URIAction("label",
-                                                "https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg")) //ที่อยู่รูป
+                                                "https://mpics.mgronline.com/pics/Images/559000008333710.JPEG")) //ที่อยู่รูป
                                 .build();
         }
 
         private Box createBodyBlock() {
 
                 final Text title = Text.builder()
-                                .text("กว๊านพะเยา") //ชื่อสถานที่
+                                .text("วัดพระธาตุอินทร์แขวนจำลอง") //ชื่อสถานที่
                                 .color("#075673")
                                 .weight(Text.TextWeight.BOLD)
                                 .size(FlexFontSize.XL)
@@ -69,7 +69,7 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                                                                 .flex(1)
                                                                 .build(),
                                                 Text.builder()
-                                                                .text("อ.เมืองพะเยา, จ.พะเยา") //ที่อยู่
+                                                                .text("ตำบลสวนเขื่อน อำเภอเมืองแพร่ จังหวัดแพร่") //ที่อยู่
                                                                 .wrap(true)
                                                                 .color("#666666")
                                                                 .flex(5)
@@ -85,7 +85,7 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                                                                 .flex(1)
                                                                 .build(),
                                                 Text.builder()
-                                                                .text("เปิดตลอดเวลา") //เวลา
+                                                                .text("-") //เวลา
                                                                 .wrap(true)
                                                                 .color("#666666")
                                                                 .size(FlexFontSize.SM)
@@ -107,20 +107,20 @@ public class PhayaoFlex implements Supplier<FlexMessage> {
                                 .height(ButtonHeight.SMALL)
                                 .color("#000000")
                                 .action(new URIAction("ข้อมูล",
-                                                "https://www.museumthailand.com/th/1725/storytelling/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2/"))
+                                                "https://www.paiduaykan.com/province/north/phrae/pratadinkwan.html"))
                                 .build();
                 final Button ortherAction = Button.builder()
                                 .style(Button.ButtonStyle.LINK)
                                 .height(ButtonHeight.SMALL)
                                 .action(new URIAction("สถานที่ท่องเที่ยวเพิ่มเติม",
-                                                "https://travel.trueid.net/detail/X9zwqekRaBjZ"))
+                                                "https://travel.trueid.net/detail/ejRD7QwmNq3L"))
                                 .color("#000000")
                                 .build();
                 final Button locAction = Button.builder()
                                 .style(Button.ButtonStyle.LINK)
                                 .height(ButtonHeight.SMALL)
                                 .action(new URIAction("พิกัด",
-                                                "https://goo.gl/maps/PN3f8Ey1SsUUJ9iL7"))
+                                                "https://goo.gl/maps/6ibcay7iCg9PhJwg8"))
                                 .color("#000000")
                                 .build();
                 final Separator separator = Separator.builder().build();

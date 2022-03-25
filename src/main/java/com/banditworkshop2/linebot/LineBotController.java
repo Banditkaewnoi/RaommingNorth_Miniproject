@@ -47,12 +47,18 @@ public class LineBotController {
             case "พะเยา": {
                 this.reply(token, new PhayaoFlex().get());
                 break;
+            
+            }
+            case "จังหวัด":{
+                this.reply(token, Arrays.asList(
+                    new TextMessage("พิมพ์ ลำปาง, พะเยา, เชียงราย, เชียงใหม่, แพร่, น่าน, ลำพูน, แพร่, แม่ฮ่องสอน, อุตรดิตถ์ เพื่อดูสถานที่ท่องเที่ยวที่แนะนำ :D")
+                ));
             }
             
             default:
                 log.info("Return echo message %s : %s", token, text);
                 this.replyText(token,
-                        "กรุณาพิมพ์ชื่อจังหวัดที่อยู่ในภาคเหนือด้วยนะครับพิมพ์ให้ถูกด้วยเน้อ :D ");
+                        "กรุณาพิมพ์ 'จังหวัด' เพื่อดูรายชื่อจังหวัดในภาคเหนือ ");
             // case "ลำปาง": {
             //     this.reply(replyToken, Arrays.asList(
             //             new TextMessage(" สถานที่ท่องเที่ยวแนะนำในจังหวัดลำปาง : เหมืองแม่เมาะ "),

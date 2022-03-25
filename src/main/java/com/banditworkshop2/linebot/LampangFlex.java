@@ -119,7 +119,7 @@ public class LampangFlex implements Supplier<FlexMessage> {
                 .style(Button.ButtonStyle.LINK)
                 .height(ButtonHeight.SMALL)
                 .action(new URIAction("พิกัด",
-                                "https://goo.gl/maps/PN3f8Ey1SsUUJ9iL7"))
+                                "https://goo.gl/maps/QsvS1LiaJPUxhYEj7"))
                 .color("#000000")
                 .build();
         final Separator separator = Separator.builder().build();
