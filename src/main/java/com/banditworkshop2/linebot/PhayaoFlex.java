@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 import static java.util.Arrays.asList;
 
 public class PhayaoFlex implements Supplier<FlexMessage> {
-        @Override
+        @Override       
         public FlexMessage get() {
                 final Image heroBlock = createHeroBlock();
                 final Box bodyBlock = createBodyBlock();

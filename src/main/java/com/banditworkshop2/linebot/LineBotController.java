@@ -4,7 +4,6 @@ import com.linecorp.bot.client.LineMessagingClient;
 import com.linecorp.bot.model.ReplyMessage;
 import com.linecorp.bot.model.event.Event;
 import com.linecorp.bot.model.event.MessageEvent;
-import com.linecorp.bot.model.event.message.StickerMessageContent;
 import com.linecorp.bot.model.event.message.TextMessageContent;
 import com.linecorp.bot.model.message.*;
 import com.linecorp.bot.model.response.BotApiResponse;
@@ -88,7 +87,7 @@ public class LineBotController {
             case "จังหวัด": {
                 this.reply(token, Arrays.asList(
                         new TextMessage(
-                                "พิมพ์ ลำปาง, พะเยา, เชียงราย, เชียงใหม่, แพร่, น่าน, ลำพูน, แพร่, แม่ฮ่องสอน, อุตรดิตถ์ เพื่อดูสถานที่ท่องเที่ยวที่แนะนำ :D")));
+                                "กรุณาพิมพ์"+"ลำปาง\n"+"พะเยา\n"+"เชียงราย\n"+"เชียงใหม่\n"+"แพร่\n"+"น่าน\n"+"ลำพูน\n"+"แพร่\n"+"แม่ฮ่องสอน\n"+"อุตรดิตถ์\n"+"เพื่อดูสถานที่ท่องเที่ยวที่แนะนำ :D")));
             }
             case "พะเย": {
                 this.reply(token,  Arrays.asList(
@@ -102,10 +101,6 @@ public class LineBotController {
         }
     }
 
-    private void handleStickerContent(String replyToken, StickerMessageContent content) {
-        reply(replyToken, new StickerMessage(
-                content.getPackageId(), content.getStickerId()));
-    }
 
     protected void replyText(@NonNull String replyToken, @NonNull String message) {
         if (replyToken.isEmpty()) {
