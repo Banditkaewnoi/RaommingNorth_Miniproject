@@ -1,5 +1,5 @@
 package com.banditworkshop2.linebot;
-
+//บัณฑิต แก้วน้อย 64363644 เพิ่มเติมในส่วนของ handleTextContent แล้วเพิ่มตัว input ในส่วน switch case
 import com.linecorp.bot.client.LineMessagingClient;
 import com.linecorp.bot.model.ReplyMessage;
 import com.linecorp.bot.model.event.Event;
@@ -41,47 +41,47 @@ public class LineBotController {
         switch (text) {
             case "พะเยา": {
                 this.reply(token, new PhayaoFlex().get());
-                break;
+                
 
             }
             case "ลำปาง": {
                 this.reply(token, new LampangFlex().get());
-                break;
+                
 
             }
             case "เชียงราย": {
                 this.reply(token, new ChiangRaiFlex().get());
-                break;
+                
 
             }
             case "เชียงใหม่": {
                 this.reply(token, new ChiangMaiFlex().get());
-                break;
+                
 
             }
             case "น่าน": {
                 this.reply(token, new NanFlex().get());
-                break;
+                
 
             }
             case "แพร่": {
                 this.reply(token, new PhraeFlex().get());
-                break;
+                
 
             }
             case "ลำพูน": {
                 this.reply(token, new LamphunFlex().get());
-                break;
+                
 
             }
             case "แม่ฮ่องสอน": {
                 this.reply(token, new MaehongsonFlex().get());
-                break;
+                
 
             }
             case "อุตรดิตถ์": {
                 this.reply(token, new UttaraditFlex().get());
-                break;
+                
 
             }
             case "จังหวัด": {

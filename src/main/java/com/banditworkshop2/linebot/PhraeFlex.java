@@ -1,3 +1,5 @@
+//บัณฑิต แก้วน้อย 64363644 สร้าง class และ method และจัดการในส่วน interface ที่เกี่ยวกับ Flex
+//สุรเชษฐ์ อินทมงคล 64366690 เขียนในส่วน ของข้อมูลที่จะแสดงใน Flex 
 package com.banditworkshop2.linebot;
 import com.linecorp.bot.model.action.URIAction;
 import com.linecorp.bot.model.message.FlexMessage;
